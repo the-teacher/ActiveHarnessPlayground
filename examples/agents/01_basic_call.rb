@@ -11,10 +11,11 @@ require_relative "../shared"
 
 header("01 — BASIC SINGLE CALL")
 
-agent  = SupportAgent.new(input: "What is USA capital?", context: { language: "Russian" })
-result = agent.call
+agent = SupportAgent.new(input: "What is USA capital?", context: { language: "Russian" })
+agent.call
+result = agent.result
 
-puts "\nProvider      : #{result.provider}"
+puts "\nProvider    : #{result.provider}"
 puts "Model         : #{result.model}"
 puts "Temperature   : #{result.temperature || "n/a"}"
 puts "System Prompt : #{result.system_prompt}"

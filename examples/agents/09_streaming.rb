@@ -1,4 +1,4 @@
-# Run: ruby examples/agents/12_streaming.rb
+# Run: ruby examples/agents/09_streaming.rb
 
 require_relative "../shared"
 
@@ -20,7 +20,7 @@ require_relative "../shared"
 #   )
 # ---------------------------------------------------------------------------
 
-header("12 — STREAMING (token by token)")
+header("09 — STREAMING (token by token)")
 
 # ── 1. Instance API ──────────────────────────────────────────────────────────
 
@@ -28,9 +28,13 @@ section("1. agent.call with stream: lambda")
 
 agent = SupportAgent.new(context: { language: "English" })
 
-print "AI: "
-result = agent.call("What are the three largest cities in the world?",
-                    stream: ->(token) { print token; $stdout.flush })
+question1 = "Explain in detail how the water cycle works, covering evaporation, " \
+            "condensation, precipitation, and runoff. Give a thorough answer."
+
+puts "You : #{question1}"
+print "AI  : "
+agent.call(question1, stream: ->(token) { print token; $stdout.flush })
+result = agent.result
 puts "\n"
 puts "Model : #{result.model}"
 puts "Time  : #{result.execution_time}s"
@@ -40,9 +44,13 @@ puts "Full output length: #{result.output.length} chars"
 
 section("2. SupportAgent.call with stream: lambda")
 
-print "AI: "
+question2 = "Describe the main differences between object-oriented, functional, and " \
+            "procedural programming paradigms with examples for each."
+
+puts "You   : #{question2}"
+print "AI    : "
 result2 = SupportAgent.call(
-  input:   "Name three programming languages in one sentence.",
+  input:   question2,
   context: { language: "English" },
   stream:  ->(token) { print token; $stdout.flush }
 )

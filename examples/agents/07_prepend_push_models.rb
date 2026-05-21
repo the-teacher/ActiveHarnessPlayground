@@ -1,4 +1,4 @@
-# Run: ruby examples/agents/10_prepend_push_models.rb
+# Run: ruby examples/agents/07_prepend_push_models.rb
 
 require_relative "../shared"
 
@@ -19,7 +19,7 @@ require_relative "../shared"
 #   - Compose model chains dynamically without touching the class definition
 # ---------------------------------------------------------------------------
 
-header("10 — PREPEND / PUSH models at runtime")
+header("07 — PREPEND / PUSH models at runtime")
 
 def print_chain(label, agent)
   puts "\n#{label}"
@@ -66,7 +66,8 @@ print_chain("5. After insert at position 1", insert_agent)
 
 # 6. Actually call — uses the runtime-modified chain
 puts "\n--- Calling with the pushed-chain agent ---"
-result = push_agent.call
+push_agent.call
+result = push_agent.result
 puts "Model  : #{result.model}"
 puts "Output : #{result.output}"
 puts "Chain  :"

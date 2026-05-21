@@ -19,7 +19,8 @@ header("04 — OVERRIDE MODELS via constructor")
 
 puts "\n--- Default model chain (from class definition) ---"
 default_agent = SupportAgent.new(input: "What is USA capital?", context: { language: "Russian" })
-default_result = default_agent.call
+default_agent.call
+default_result = default_agent.result
 
 puts "Model  : #{default_result.model}"
 puts "Output : #{default_result.output}"
@@ -35,7 +36,8 @@ custom_agent = SupportAgent.new(
     { provider: :openrouter, model: "meta-llama/llama-3.3-70b-instruct:free" }
   ]
 )
-custom_result = custom_agent.call
+custom_agent.call
+custom_result = custom_agent.result
 
 puts "Model  : #{custom_result.model}"
 puts "Output : #{custom_result.output}"

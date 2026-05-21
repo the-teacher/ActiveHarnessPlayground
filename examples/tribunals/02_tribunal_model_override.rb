@@ -1,9 +1,9 @@
-# Run: ruby examples/tribunals/07_tribunal_model_override.rb
+# Run: ruby examples/tribunals/02_tribunal_model_override.rb
 
 require_relative "../shared"
 require_relative "../../app/ai/tribunals/politeness_tribunal"
 
-header("Example 07 — Tribunal: same agent, different models")
+header("Example 02 — Tribunal: same agent, different models")
 
 input = "I hate this product, it's completely useless!"
 puts "\nInput: #{input.inspect}\n\n"

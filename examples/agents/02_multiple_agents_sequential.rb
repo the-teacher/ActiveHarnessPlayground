@@ -22,7 +22,8 @@ total_start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 agents.each do |lang, agent|
   puts "\n--- #{lang} ---"
   t0     = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-  result = agent.call
+  agent.call
+  result  = agent.result
   elapsed = Process.clock_gettime(Process::CLOCK_MONOTONIC) - t0
 
   puts "Output   : #{result.output}"

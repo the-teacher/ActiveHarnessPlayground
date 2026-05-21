@@ -1,4 +1,4 @@
-# Run: ruby examples/agents/11_mini_chat.rb
+# Run: ruby examples/agents/08_mini_chat.rb
 
 require_relative "../shared"
 
@@ -12,7 +12,7 @@ require_relative "../shared"
 #   result = agent.call           # reuses last input
 # ---------------------------------------------------------------------------
 
-header("11 — MINI CHAT")
+header("08 — MINI CHAT")
 
 memory = ActiveHarness::Memory.new(
   session_id: "mini_chat",
@@ -42,7 +42,8 @@ questions.each_with_index do |q, i|
   ])
 
   puts "\n[#{i + 1}] You: #{q[:text]}"
-  result = agent.call(q[:text])
+  agent.call(q[:text])
+  result = agent.result
   puts "     AI : #{result.output}"
   puts "     via: #{result.model} (#{result.execution_time}s)"
   log << { model: result.model, time: result.execution_time }

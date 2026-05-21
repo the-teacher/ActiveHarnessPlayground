@@ -1,9 +1,9 @@
-# Run: ruby examples/tribunals/06_tribunal.rb
+# Run: ruby examples/tribunals/01_tribunal.rb
 
 require_relative "../shared"
 require_relative "../../app/ai/tribunals/content_quality_tribunal"
 
-header("Example 06 — Tribunal (parallel multi-agent verdict)")
+header("Example 01 — Tribunal (parallel multi-agent verdict)")
 
 input = "I hate this product, it's completely useless!"
 puts "\nInput: #{input.inspect}\n\n"

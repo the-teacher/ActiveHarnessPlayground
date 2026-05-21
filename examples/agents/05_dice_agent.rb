@@ -16,8 +16,9 @@ require_relative "../../app/ai/agents/dice_agent"
 header("05 — DICE AGENT (structured JSON output)")
 
 5.times do |i|
-  agent  = DiceAgent.new
-  result = agent.call
+  agent = DiceAgent.new
+  agent.call
+  result = agent.result
 
   roll    = agent.context[:dice_roll]
   parsed  = result.parsed          # Hash — already parsed by the agent

@@ -1,4 +1,4 @@
-# Run: ruby examples/agents/14_custom_memory.rb
+# Run: ruby examples/agents/11_custom_memory.rb
 
 require_relative "../shared"
 require_relative "../../app/ai/agents/support_agent"
@@ -15,7 +15,7 @@ require_relative "../../app/ai/memory/app_memory"
 #   cat storage/ai/memory/custom_memory_demo.json
 # ---------------------------------------------------------------------------
 
-header("14 — CUSTOM MEMORY CLASS")
+header("11 — CUSTOM MEMORY CLASS")
 
 memory = AppMemory.new(session_id: "custom_memory_demo")
 memory.delete rescue nil  # start clean
@@ -30,7 +30,8 @@ questions = [
 
 questions.each_with_index do |question, i|
   puts "\n[#{i + 1}] You: #{question}"
-  result = agent.call(question)
+  agent.call(question)
+  result = agent.result
   puts "     AI : #{result.output}"
   puts "     via: #{result.model} (#{result.execution_time}s)"
 end

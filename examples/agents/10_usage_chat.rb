@@ -1,4 +1,4 @@
-# Run: ruby examples/agents/13_usage_chat.rb
+# Run: ruby examples/agents/10_usage_chat.rb
 
 require_relative "../shared"
 
@@ -13,7 +13,7 @@ require_relative "../shared"
 #          (output_tokens / 1_000_000.0 * output_price_per_m)
 # ---------------------------------------------------------------------------
 
-header("13 — CHAT WITH USAGE TRACKING")
+header("10 — CHAT WITH USAGE TRACKING")
 
 # mistralai/mistral-nemo pricing on OpenRouter (as of 2025):
 #   input:  $0.035 / 1M tokens
@@ -39,7 +39,8 @@ questions = [
 
 questions.each_with_index do |question, i|
   puts "\n[#{i + 1}] You: #{question}"
-  result = agent.call(question)
+  agent.call(question)
+  result = agent.result
   puts "     AI : #{result.output}"
 
   u = result.usage

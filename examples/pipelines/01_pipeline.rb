@@ -1,9 +1,9 @@
-# Run: ruby examples/pipelines/08_pipeline.rb
+# Run: ruby examples/pipelines/01_pipeline.rb
 
 require_relative "../shared"
 require_relative "../../app/ai/pipelines/support_pipeline"
 
-header("Example 08 — Pipeline (sequential multi-step processing)")
+header("Example 01 — Pipeline (sequential multi-step processing)")
 
 def run_pipeline(label, input, context: {})
   section(label)

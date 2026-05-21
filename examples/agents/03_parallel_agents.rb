@@ -23,7 +23,7 @@ agents = {
 start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 
 futures = agents.map do |lang, agent|
-  Concurrent::Future.execute { [lang, agent.call] }
+  Concurrent::Future.execute { [lang, agent.call.result] }
 end
 
 results = futures.map(&:value!)

@@ -1,4 +1,4 @@
-# Run: ruby examples/agents/09_memory.rb
+# Run: ruby examples/agents/06_memory.rb
 
 require_relative "../shared"
 require_relative "../../app/ai/agents/support_agent"
@@ -14,7 +14,7 @@ require_relative "../../app/ai/agents/support_agent"
 #   cat storage/ai/memory/demo_session.json
 # ---------------------------------------------------------------------------
 
-header("09 — CONVERSATIONAL MEMORY")
+header("06 — CONVERSATIONAL MEMORY")
 
 memory = ActiveHarness::Memory.new(
   session_id:   "demo_session",
